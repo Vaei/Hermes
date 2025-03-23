@@ -74,7 +74,7 @@ void FHermesContentEndpointEditorExtension::CopyEndpointURLsToClipboard(TArray<F
 	// Strip the final newline
 	const int32 LineTerminatorLen = FCString::Strlen(LINE_TERMINATOR);
 	checkf(ClipboardText.EndsWith(LINE_TERMINATOR), TEXT("There should always be at least one line terminator!"));
-	ClipboardText.RemoveAt(ClipboardText.Len() - LineTerminatorLen, LineTerminatorLen, false);
+	ClipboardText.RemoveAt(ClipboardText.Len() - LineTerminatorLen, LineTerminatorLen, EAllowShrinking::No);
 
 	FPlatformApplicationMisc::ClipboardCopy(*ClipboardText);
 }

@@ -35,7 +35,7 @@ namespace Hermes
 		// The first character can only be an alphabetic character, so strip off any non-alphabetic ones
 		while (Input.Len() != 0 && !FChar::IsAlpha(Input[0]))
 		{
-			Input.RemoveAt(0, 1, false);
+			Input.RemoveAt(0, 1, EAllowShrinking::No);
 		}
 
 		if (Input.Len() > 0)
